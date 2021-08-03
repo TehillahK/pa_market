@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pa_market",
+    "slug": "pa_market",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pa_market"
+}
