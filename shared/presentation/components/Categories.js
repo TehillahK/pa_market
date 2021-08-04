@@ -27,8 +27,8 @@ const DATA = [
   },
 ];
 
-const Categories = () => {
-  const renderItem = ({item}) => <CategoryIcon name={item.title} />;
+const Categories = (props) => {
+  const renderItem = ({item}) => <CategoryIcon name={item.title}  />;
   return (
     <SafeAreaView>
       <FlatList

@@ -5,23 +5,12 @@ import CategoryIcon from '../components/CategoryIcon';
 import FarmsList from '../components/farmsList';
 import Categories from '../components/Categories';
 
-function Options(props) {
-  return (
-    <View >
-      <Pressable>
-        <Text>Delivery</Text>
-      </Pressable>
-      <Pressable>
-        <Text>Delivery</Text>
-      </Pressable>
-    </View>
-  );
-}
+
 
 function Address(props) {
   return (
     <View>
-      <Pressable>
+      <Pressable onPress={props.navigation}>
         <Text style={styles.address}>Deliver to :{props.userAddress}</Text>
       </Pressable>
     </View>
@@ -30,12 +19,18 @@ function Address(props) {
 Address.defaultProps = {
   userAddress: '32 Potato street Ave',
 };
-const FarmsScreen = () => {
+const FarmsScreen = ({navigation}) => {
+    const GoToAddress=()=>{
+        navigation.navigate('Address')
+    }
+    const GoToVegetables=()=>{
+        navigation.navigate('Vegetables')
+    }
   return (
     <View style={styles.container}>
 
-      <Address />
-      <Categories />
+      <Address navigation={GoToAddress} />
+      <Categories navVeg={GoToVegetables}/>
       <FarmsList />
     </View>
   );
