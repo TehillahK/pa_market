@@ -49,7 +49,11 @@ const Tab = createBottomTabNavigator();
  const App = () => {
    return (
        <NavigationContainer>
-           <Tab.Navigator>
+           <Tab.Navigator
+               screenOptions={{
+                   headerShown: false
+               }}
+           >
                <Tab.Screen
                    name="Home"
                    component={FarmStack}
