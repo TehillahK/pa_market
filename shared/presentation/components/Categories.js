@@ -5,7 +5,7 @@ import {
   FlatList,
   StyleSheet,
   Text,
-  StatusBar,
+  StatusBar, Pressable,
 } from 'react-native';
 import CategoryIcon from './CategoryIcon';
 const DATA = [
@@ -26,9 +26,15 @@ const DATA = [
     title: 'other',
   },
 ];
+function handleClick(clicked,navVeg){
+ switch (clicked) {
+   case "Vegetables":
+     navVeg
+ }
+}
 
 const Categories = (props) => {
-  const renderItem = ({item}) => <CategoryIcon name={item.title}  />;
+  const renderItem = ({item}) =><CategoryIcon name={item.title}  /> ;
   return (
     <SafeAreaView>
       <FlatList

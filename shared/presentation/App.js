@@ -10,6 +10,7 @@ import { StatusBar } from 'expo-status-bar';
  import React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -17,7 +18,9 @@ import FarmsScreen from "./screens/farmsScreen";
 import HomeStack from "./routes/HomeStack";
 import SearchScreen from "./screens/searchScreen";
 import SearchStack from "./routes/SearchStack";
-
+import FarmStack from "./routes/FarmStack";
+import FarmScreen from "./screens/farmScreen";
+const Stack = createNativeStackNavigator();
 function HomeScreen() {
     return (
         <View>
@@ -33,6 +36,14 @@ function SettingsScreen() {
         </View>
     );
 }
+
+function OrdersScreen() {
+    return(
+        <View>
+            <Text>Orders</Text>
+        </View>
+    )
+}
 const Tab = createBottomTabNavigator();
 
  const App = () => {
@@ -41,7 +52,7 @@ const Tab = createBottomTabNavigator();
            <Tab.Navigator>
                <Tab.Screen
                    name="Home"
-                   component={HomeStack}
+                   component={FarmStack}
                    options={{
                        tabBarLabel: 'Home',
                        tabBarIcon: ({ color, size }) => (
@@ -61,7 +72,7 @@ const Tab = createBottomTabNavigator();
                />
                <Tab.Screen
                    name="Orders"
-                   component={HomeScreen}
+                   component={OrdersScreen}
                    options={{
                        tabBarLabel: 'Orders',
                        tabBarIcon: ({ color, size }) => (

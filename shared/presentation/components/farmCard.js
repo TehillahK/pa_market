@@ -12,7 +12,14 @@ const styles = StyleSheet.create({
 });
 const FarmCard = props => {
   return (
-    <Pressable>
+    <Pressable
+      onPress={
+        function press(){
+          console.log("touch")
+          props.nav()
+        }
+      }
+    >
       <Card style={styles.container}>
         <Card.Cover source={{uri: props.photoUrl}} />
         <Card.Content>

@@ -1,6 +1,9 @@
 import React from 'react';
-import {FlatList, SafeAreaView} from 'react-native';
+import {FlatList, Pressable, SafeAreaView} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import FarmCard from './farmCard';
+
+import FarmScreen from "../screens/farmScreen";
 
 const DATA = [
   {
@@ -23,13 +26,25 @@ const DATA = [
   },
 ];
 
-const FarmsList = () => {
+const FarmsList = (props) => {
+
+    const Move = () => {
+
+        props.nav()
+        let screenName='Farm'
+
+
+    }
+
   const renderItem = ({item}) => (
-    <FarmCard
-      name={item.name}
-      deliveryTimes={item.deliveryTimes}
-      photoUrl={item.photoUrl}
-    />
+
+        <FarmCard
+        name={item.name}
+        deliveryTimes={item.deliveryTimes}
+        photoUrl={item.photoUrl}
+        nav={props.nav}
+       />
+
   );
   return (
     <SafeAreaView>
