@@ -43,6 +43,7 @@ const FarmsList = (props) => {
         deliveryTimes={item.deliveryTimes}
         photoUrl={item.photoUrl}
         nav={props.nav}
+        id={item.id}
        />
 
   );

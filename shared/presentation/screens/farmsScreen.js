@@ -38,8 +38,8 @@ const FarmsScreen = ({navigation}) => {
     const GoToVegetables=()=>{
         navigation.navigate('Vegetables')
     };
-    const FarmsNav=()=>{
-        navigation.navigate('Farm')
+    const FarmsNav=(uID)=>{
+        navigation.navigate('Farm',{id:`${uID}`})
     }
     setHomePageNavs(FarmsNav)
 

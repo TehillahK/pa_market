@@ -15,8 +15,8 @@ const FarmCard = props => {
     <Pressable
       onPress={
         function press(){
-          console.log("touch")
-          props.nav()
+          console.log(props.id)
+          props.nav(props.id)
         }
       }
     >

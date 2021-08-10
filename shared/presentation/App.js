@@ -15,7 +15,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import FarmsScreen from "./screens/farmsScreen";
-import HomeStack from "./routes/HomeStack";
 import SearchScreen from "./screens/searchScreen";
 import SearchStack from "./routes/SearchStack";
 import FarmStack from "./routes/FarmStack";
@@ -24,7 +23,7 @@ const Stack = createNativeStackNavigator();
 function HomeScreen() {
     return (
         <View>
-            <HomeStack />
+
         </View>
     );
 }
