@@ -3,7 +3,7 @@ import React from "react";
 import { Title,Headline } from 'react-native-paper';
 import FarmCard from "./farmCard";
 
-import {SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList} from 'react-native';
+import {SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, SectionList, Pressable} from 'react-native';
 import Crop from "./crop";
 
 const DATA = [
@@ -24,10 +24,13 @@ const DATA = [
         data: ["Cheese Cake", "Ice Cream"]
     }
 ];
+function press() {
+    console.log('press on crop')
+}
 const Item = ({ title }) => (
-    <View >
+    <Pressable onPress={press()}>
         <Crop title={title}/>
-    </View>
+    </Pressable>
 );
 
 
