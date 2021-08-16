@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 const Crop = (props) => {
     const navigation = useNavigation();
     function press() {
-        console.log('press on crop 1')
+        return props.nav
 
     }
     return(

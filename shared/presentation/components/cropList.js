@@ -24,15 +24,22 @@ const DATA = [
         data: ["Cheese Cake", "Ice Cream"]
     }
 ];
-function press() {
-    console.log('press on crop')
+let nav;
+function setNav(nav) {
+    nav=nav;
 }
-const Item = ({ title }) => (
-    <Crop title={title} />
-);
+function press() {
+
+}
 
 
 const CropList = (props) => {
+
+    const Item = ({ title }) => (
+        <Crop title={title} nav={props.nav} />
+    );
+
+   // setNav(props.nav)
     return(
         <SafeAreaView style={styles.container}>
             <SectionList

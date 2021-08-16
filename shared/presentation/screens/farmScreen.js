@@ -24,16 +24,18 @@ import * as navTitleView from "react-native";
 
 const MIN_HEIGHT = Platform.OS === 'ios' ? 90 : 55;
 const MAX_HEIGHT = 350;
-
-const FarmScreen = (props) => {
-    let headerChildren = <Text>Hello, World!</Text>;
+let photoUrl='https://picsum.photos/700';
+const FarmScreen = ({navigation}) => {
+    const goToScreen=()=>{
+        navigation.navigate("Product")
+    }
     return(
         <ImageHeaderScrollView
             maxHeight={MAX_HEIGHT}
             minHeight={MIN_HEIGHT}
             maxOverlayOpacity={0.1}
             minOverlayOpacity={0.0}
-            renderHeader={() => <Image source={{uri:props.photoUrl}} style={{ height: MAX_HEIGHT, width: Dimensions.get('window').width }} />}
+            renderHeader={() => <Image source={{uri:photoUrl}} style={{ height: MAX_HEIGHT, width: Dimensions.get('window').width }} />}
             renderForeground={() => (
                 <View style={styles.cover} >
                     <TouchableOpacity onPress={() => console.log("tap!!")}>
@@ -44,7 +46,7 @@ const FarmScreen = (props) => {
         >
             <View style={{ height: 1000 }}>
                 <TriggeringView >
-                   <CropList />
+                   <CropList nav={goToScreen}/>
                 </TriggeringView>
             </View>
         </ImageHeaderScrollView>
