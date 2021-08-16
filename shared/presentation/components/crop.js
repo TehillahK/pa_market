@@ -1,7 +1,7 @@
 import React from "react";
-import {View, Text, Image,StyleSheet} from "react-native";
+import {View, Text, Image, StyleSheet, Pressable} from "react-native";
 import { Title,Headline,Avatar, Card, IconButton  } from 'react-native-paper';
-
+import {useNavigation} from "@react-navigation/native";
 
 const styles = StyleSheet.create({
     container: {
@@ -18,8 +18,13 @@ const styles = StyleSheet.create({
 });
 
 const Crop = (props) => {
+    const navigation = useNavigation();
+    function press() {
+        console.log('press on crop 1')
+
+    }
     return(
-        <View style={styles.container}>
+        <Pressable  onPress={press()} style={styles.container}>
             <Card.Title
                 title={props.title}
                 subtitle={props.description}
@@ -30,7 +35,7 @@ const Crop = (props) => {
                     }}
                 />}
             />
-        </View>
+        </Pressable>
     )
 }
 

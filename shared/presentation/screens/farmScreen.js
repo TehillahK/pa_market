@@ -31,13 +31,13 @@ const FarmScreen = (props) => {
         <ImageHeaderScrollView
             maxHeight={MAX_HEIGHT}
             minHeight={MIN_HEIGHT}
-            maxOverlayOpacity={0.6}
-            minOverlayOpacity={0.3}
+            maxOverlayOpacity={0.1}
+            minOverlayOpacity={0.0}
             renderHeader={() => <Image source={{uri:props.photoUrl}} style={{ height: MAX_HEIGHT, width: Dimensions.get('window').width }} />}
             renderForeground={() => (
-                <View style={{ height: 150, justifyContent: "center", alignItems: "center" }} >
+                <View style={styles.cover} >
                     <TouchableOpacity onPress={() => console.log("tap!!")}>
-                        <Text style={{ backgroundColor: "transparent" }}>Tap Me!</Text>
+                        <Text style={{ fontSize:36, backgroundColor: "transparent"  ,fontWeight: 'bold'}}>Farm Name</Text>
                     </TouchableOpacity>
                 </View>
             )}
@@ -53,6 +53,12 @@ const FarmScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         paddingTop: 50,
+    },
+    cover:{
+        height: MAX_HEIGHT,
+        justifyContent: "flex-end",
+        alignItems:"flex-start",
+        fontSize:36
     },
     tinyLogo: {
         width: 50,

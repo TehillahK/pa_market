@@ -28,9 +28,7 @@ function press() {
     console.log('press on crop')
 }
 const Item = ({ title }) => (
-    <Pressable onPress={press()}>
-        <Crop title={title}/>
-    </Pressable>
+    <Crop title={title} />
 );
 
 
