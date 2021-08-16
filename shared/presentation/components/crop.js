@@ -1,7 +1,6 @@
 import React from "react";
 import {View, Text, Image,StyleSheet} from "react-native";
 import { Title,Headline,Avatar, Card, IconButton  } from 'react-native-paper';
-import FarmCard from "./farmCard";
 
 
 const styles = StyleSheet.create({
