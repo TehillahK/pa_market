@@ -5,7 +5,7 @@ import CategoryIcon from '../components/CategoryIcon';
 import FarmsList from '../components/farmsList';
 import Categories from '../components/Categories';
 import FarmCard from "../components/farmCard";
-
+import { FAB } from 'react-native-paper';
 
 let GoToFarm;
 let GoToComments;
@@ -21,15 +21,18 @@ function clickHandler(nav) {
 
 function Address(props) {
   return (
-    <View>
+    <View style={styles.delivery}>
       <Pressable onPress={clickHandler()}>
-        <Text style={styles.address}>Deliver to :{props.userAddress}</Text>
+          <Chip>
+                <Text style={styles.address}>Deliver to :{props.userAddress}</Text>
+
+          </Chip>
       </Pressable>
     </View>
   );
 }
 Address.defaultProps = {
-  userAddress: '32 Potato street Ave',
+  userAddress: '32 Potato Ave',
 };
 const FarmsScreen = ({navigation}) => {
     const GoToAddress=()=>{
@@ -59,11 +62,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   address: {
-    marginLeft: 80,
+      fontWeight: 'bold',
+      fontSize: 15,
   },
   options:{
     flex: 1,
     flexDirection: 'row',
   },
+    delivery:{
+        display: "flex",
+        flexDirection:"row",
+        justifyContent:"space-around",
+
+
+    }
 });
 export default FarmsScreen;

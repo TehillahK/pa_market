@@ -9,6 +9,7 @@ const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'Farm 1',
+      deliveryPrice:'k15',
     deliveryTimes: '20-30',
     photoUrl: 'https://picsum.photos/700',
   },
