@@ -51,7 +51,7 @@ const FarmsList = (props) => {
   return (
     <SafeAreaView>
       <FlatList
-        data={DATA}
+        data={props.farms}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />

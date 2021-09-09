@@ -4,11 +4,13 @@ import {Chip} from 'react-native-paper';
 import CategoryIcon from '../components/CategoryIcon';
 import FarmsList from '../components/farmsList';
 import Categories from '../components/Categories';
+import { getAllFarms } from '../../business/AccessFarms';
 import FarmCard from "../components/farmCard";
 import { FAB } from 'react-native-paper';
 
 let GoToFarm;
 let GoToComments;
+const Farms = getAllFarms();
 function setHomePageNavs(profileNav){
     GoToFarm=profileNav;
 
@@ -53,7 +55,7 @@ const FarmsScreen = ({navigation}) => {
 
         <Address navigation={GoToAddress} />
         <Categories navVeg={GoToVegetables}/>
-        <FarmsList nav={GoToFarm}/>
+        <FarmsList nav={GoToFarm} farms={Farms}/>
     </View>
   );
 };

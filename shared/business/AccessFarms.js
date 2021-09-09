@@ -3,7 +3,7 @@ const PROXY="68.183.195.135";
 const PORT= 3000
 
 //GETS ALL FARMS FROM DB
-async export function getAllFarms() {
+export async function getAllFarms() {
     let result=[]; //farms array will be stored here
     try {
       const response = await Axios.get('/get-all-farms',
